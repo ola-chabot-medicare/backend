@@ -1,14 +1,15 @@
-import os 
+import os
+from dotenv import load_dotenv
 
-from dotenv import load_dotenv 
+load_dotenv()  # Load variables from .env into the environment
 
-load_dotenv()
 class Settings:
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")        # Required for LLM & embeddings
+    CHROMA_API_KEY: str = os.getenv("CHROMA_API_KEY", "")        # ChromaDB Cloud API key
+    CHROMA_TENANT: str = os.getenv("CHROMA_TENANT", "")          # Chroma account/tenant name
+    CHROMA_DATABASE: str = os.getenv("CHROMA_DATABASE", "")      # Chroma database name
+    CHROMA_COLLECTION: str = os.getenv("CHROMA_COLLECTION", "medical_collection")  # Default collection
+    APP_ENV: str = os.getenv("APP_ENV", "development")
+    DEBUG: bool = os.getenv("DEBUG", "false").lower() == "true"
 
-    CHROMA_API_KEY = os.getenv("CHROMA_API_KEY")
-    CHROMA_TENANT = os.getenv("CHROMA_TENANT")
-    CHROMA_DATABASE = os.getenv("CHROMA_DATABASE")
-    CHROMA_COLLECTION = os.getenv("CHROMA_COLLECTION", "medicare-chatbot")
-
-settings = Settings()
+settings = Settings()  # Single shared instance — import this everywhere
