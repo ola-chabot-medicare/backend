@@ -4,8 +4,10 @@ from config.settings import settings
 
 
 def get_chroma_client():
-    return chromadb.PersistentClient(
-        path=settings.CHROMA_PATH
+    return chromadb.CloudClient(
+        api_key=settings.CHROMA_API_KEY,
+        tenant=settings.CHROMA_TENANT,
+        database=settings.CHROMA_DATABASE,
     )
 
 
