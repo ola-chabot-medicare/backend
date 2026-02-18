@@ -2,3 +2,7 @@ fastapi
 chromadb 
 uvicorn
 python-dotenv
+langchain
+langchain-openai
+pydantic
+openai
