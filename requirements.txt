@@ -1,5 +1,5 @@
 fastapi
-chromadb 
+chromadb
 uvicorn
 python-dotenv
 langchain

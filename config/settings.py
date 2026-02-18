@@ -8,6 +8,7 @@ class Settings:
     CHROMA_API_KEY: str = os.getenv("CHROMA_API_KEY", "")        # ChromaDB Cloud API key
     CHROMA_TENANT: str = os.getenv("CHROMA_TENANT", "")          # Chroma account/tenant name
     CHROMA_DATABASE: str = os.getenv("CHROMA_DATABASE", "")      # Chroma database name
+    CHROMA_COLLECTION: str = os.getenv("CHROMA_COLLECTION", "medical_collection")  # Default collection
     APP_ENV: str = os.getenv("APP_ENV", "development")
     DEBUG: bool = os.getenv("DEBUG", "false").lower() == "true"
 
