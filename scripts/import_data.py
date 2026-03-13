@@ -109,6 +109,9 @@ def build_ndc_metadata(record: dict) -> dict:
         "dosage_form":      record.get("dosage_form", ""),
         "labeler_name":     record.get("labeler_name", ""),
         "marketing_category": record.get("marketing_category", ""),
+        # Drug Label empty for NDC records
+        "label_id":           "",
+        "effective_time":     "",
     }
 
 
